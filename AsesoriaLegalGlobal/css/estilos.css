@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    Asesoría Legal Global - hoja de estilos única del sitio
    Se enlaza solamente en MasterPage.master, así todas las
    páginas que heredan de la Master la reciben.
@@ -200,4 +200,78 @@ h1, h2, h3 {
 
 .nosotros .logo-nosotros {
     width: 160px;
+}
+
+/* ---------- Formularios (Registro y Login) ---------- */
+.formulario {
+    max-width: 520px;
+    margin: 0 auto;         /* centrado en escritorio */
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+/* Cada etiqueta ocupa su propia línea, arriba del cuadro de texto */
+.campo label {
+    display: block;
+    font-weight: bold;
+    color: var(--azul);
+    margin-bottom: 4px;
+}
+
+.campo input[type="text"],
+.campo input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gris);
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+/* Borde dorado cuando el usuario está escribiendo en el campo */
+.campo input:focus {
+    outline: none;
+    border-color: var(--dorado);
+    box-shadow: 0 0 0 3px rgba(243, 193, 104, 0.35);
+}
+
+.aclaracion {
+    color: #666666;
+    font-size: 0.9em;
+}
+
+/* ---------- Mensajes ---------- */
+/* Mensajes de los validadores y errores: rojo */
+.error {
+    display: block;
+    color: var(--rojo-error);
+    font-size: 0.9em;
+    margin-top: 4px;
+}
+
+/* Label de mensajes generales (se le cambia la clase desde el code-behind) */
+.mensaje {
+    display: block;
+    margin-top: 14px;
+}
+
+.mensaje-error {
+    display: block;
+    margin-top: 14px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #fdecea;
+    color: var(--rojo-error);
+    border-left: 4px solid var(--rojo-error);
+}
+
+.mensaje-exito {
+    display: block;
+    margin-top: 14px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #e8f5ec;
+    color: var(--verde-exito);
+    border-left: 4px solid var(--verde-exito);
 }
