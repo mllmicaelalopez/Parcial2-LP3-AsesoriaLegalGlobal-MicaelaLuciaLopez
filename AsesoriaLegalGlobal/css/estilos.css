@@ -275,3 +275,37 @@ h1, h2, h3 {
     color: var(--verde-exito);
     border-left: 4px solid var(--verde-exito);
 }
+
+/* ---------- Mis Documentos ---------- */
+.subida {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.subida input[type="file"] {
+    flex: 1;
+    min-width: 0;           /* deja que el selector se achique en pantallas chicas */
+    padding: 8px;
+    border: 1px dashed var(--gris);
+    border-radius: 6px;
+    background-color: var(--fondo);
+}
+
+/* Lista de documentos: sin viñetas, una fila por archivo */
+.lista-documentos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-documentos li {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e3da;
+    word-break: break-word; /* nombres largos no rompen el diseño en celular */
+}
+
+.lista-documentos li:nth-child(odd) {
+    background-color: var(--fondo);
+}
