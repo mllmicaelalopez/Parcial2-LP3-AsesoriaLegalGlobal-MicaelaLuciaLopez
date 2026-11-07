@@ -1,0 +1,53 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="AsesoriaLegalGlobal.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <!-- Hace que en el celular la página use el ancho real de la pantalla (necesario para el diseño responsivo) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Asesoría Legal Global</title>
+    <!-- Único CSS del sitio: al estar en la Master, lo reciben todas las páginas -->
+    <link href="css/estilos.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Encabezado: logo y nombre de la empresa (se repite en todas las páginas) -->
+        <header class="encabezado">
+            <img src="img/logo2.png" alt="Logo de Asesoría Legal Global" class="logo" />
+            <div>
+                <p class="nombre-empresa">Asesoría Legal Global</p>
+                <p class="lema">Tus documentos legales, seguros y en un solo lugar</p>
+            </div>
+        </header>
+
+        <!-- Navbar: enlaces con asp:HyperLink. Algunos se ocultan desde el code-behind según haya sesión o no -->
+        <nav class="navbar">
+            <asp:HyperLink ID="lnkInicio" runat="server" NavigateUrl="~/Default.aspx">Inicio</asp:HyperLink>
+            <asp:HyperLink ID="lnkRegistro" runat="server" NavigateUrl="~/Registro.aspx">Registrarse</asp:HyperLink>
+            <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Login.aspx">Iniciar sesión</asp:HyperLink>
+            <asp:HyperLink ID="lnkMisDocumentos" runat="server" NavigateUrl="~/MisDocumentos.aspx">Mis Documentos</asp:HyperLink>
+            <asp:HyperLink ID="lnkCerrarSesion" runat="server" NavigateUrl="~/CerrarSesion.aspx">Cerrar sesión</asp:HyperLink>
+            <asp:Label ID="lblSaludo" runat="server" CssClass="saludo"></asp:Label>
+        </nav>
+
+        <!-- Acá cada página "hija" pone su propio contenido -->
+        <main class="contenido">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <!-- Footer: igual que el encabezado, aparece en todas las páginas -->
+        <footer class="pie">
+            <img src="img/logo1.png" alt="Logo de Asesoría Legal Global" class="logo-pie" />
+            <p class="copy">© 2026 Asesoría Legal Global</p>
+            <p>Contacto: contacto@asesorialegalglobal.example · Tel. (0351) 555-0142</p>
+        </footer>
+
+    </form>
+</body>
+</html>

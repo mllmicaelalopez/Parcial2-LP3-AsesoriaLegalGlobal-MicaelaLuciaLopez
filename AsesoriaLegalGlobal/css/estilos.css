@@ -130,3 +130,74 @@ h1, h2, h3 {
 .pie .copy {
     color: var(--dorado);
 }
+
+/* ---------- Tarjetas (cajas blancas con sombra) ---------- */
+.tarjeta {
+    background-color: var(--blanco);
+    border-radius: 10px;
+    border-top: 4px solid var(--dorado);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* ---------- Botones (sirve para asp:Button y para HyperLink con CssClass="boton") ---------- */
+.boton {
+    display: inline-block;
+    background-color: var(--dorado);
+    color: var(--azul-oscuro);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: var(--dorado-apagado);
+}
+
+.boton-secundario {
+    background-color: var(--azul);
+    color: var(--blanco);
+}
+
+.boton-secundario:hover {
+    background-color: var(--azul-oscuro);
+}
+
+/* ---------- Página de inicio ---------- */
+.portada {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.portada .banner {
+    border-radius: 12px;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Las tres tarjetas de servicios en fila (grid de 3 columnas) */
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.nosotros {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nosotros .logo-nosotros {
+    width: 160px;
+}
