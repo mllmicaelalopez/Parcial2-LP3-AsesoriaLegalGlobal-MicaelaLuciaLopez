@@ -1,0 +1,132 @@
+/* =========================================================
+   Asesoría Legal Global - hoja de estilos única del sitio
+   Se enlaza solamente en MasterPage.master, así todas las
+   páginas que heredan de la Master la reciben.
+   ========================================================= */
+
+/* ---------- Paleta sacada de los logos de la empresa ----------
+   Las "variables CSS" (--nombre) guardan un color una sola vez
+   y después se usan con var(--nombre). Si cambia un color,
+   se cambia solo acá. */
+:root {
+    --azul: #2d2f7a;          /* fondo del logo 2 */
+    --azul-oscuro: #121a48;   /* fondo del logo 3 */
+    --azul-noche: #0d0f2a;    /* franja derecha del logo 3 */
+    --dorado: #f3c168;        /* balanza y estatua del logo 2 */
+    --dorado-apagado: #ccab6a;/* detalles dorados del logo 3 */
+    --gris: #9a9cab;          /* texto secundario de los logos */
+    --fondo: #f6f5f0;         /* fondo claro tipo papel */
+    --blanco: #ffffff;
+    --rojo-error: #b3261e;
+    --verde-exito: #1e7b34;
+}
+
+/* ---------- Reglas generales ---------- */
+* {
+    box-sizing: border-box; /* el padding no agranda las cajas */
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--fondo);
+    color: #222222;
+    line-height: 1.5;
+}
+
+/* Ninguna imagen puede ser más ancha que su contenedor (clave para celular) */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    color: var(--azul-oscuro);
+}
+
+/* ---------- Encabezado con el logo ---------- */
+.encabezado {
+    background-color: var(--azul);
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 24px;
+}
+
+.encabezado .logo {
+    width: 70px;
+    border-radius: 8px;
+}
+
+.encabezado .nombre-empresa {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--dorado);
+    margin: 0;
+}
+
+.encabezado .lema {
+    margin: 0;
+    color: var(--blanco);
+    font-size: 0.9em;
+}
+
+/* ---------- Barra de navegación ---------- */
+.navbar {
+    background-color: var(--azul-oscuro);
+    display: flex;          /* los enlaces quedan uno al lado del otro */
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.navbar a {
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 14px 16px;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: var(--azul);
+    color: var(--dorado);
+}
+
+.navbar .saludo {
+    margin-left: auto;      /* empuja el saludo a la derecha */
+    color: var(--dorado);
+    font-weight: bold;
+    padding: 14px 16px;
+}
+
+/* ---------- Contenido principal ---------- */
+.contenido {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px;
+    min-height: 60vh;       /* el footer no queda pegado arriba en páginas cortas */
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+    background-color: var(--azul-noche);
+    color: var(--gris);
+    text-align: center;
+    padding: 20px;
+}
+
+.pie .logo-pie {
+    width: 60px;
+    background-color: var(--blanco);
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.pie p {
+    margin: 4px 0;
+}
+
+.pie .copy {
+    color: var(--dorado);
+}
