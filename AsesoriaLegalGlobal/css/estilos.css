@@ -309,3 +309,72 @@ h1, h2, h3 {
 .lista-documentos li:nth-child(odd) {
     background-color: var(--fondo);
 }
+
+/* =========================================================
+   DISEÑO RESPONSIVO
+   Todo lo que está dentro de @media se aplica SOLO cuando la
+   pantalla mide 768px de ancho o menos (tablets chicas y celulares).
+   Funciona junto con la etiqueta meta viewport de la Master.
+   ========================================================= */
+@media (max-width: 768px) {
+
+    /* Encabezado: logo arriba y texto abajo, centrados */
+    .encabezado {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .encabezado .nombre-empresa {
+        font-size: 1.3em;
+    }
+
+    /* Navbar: de horizontal pasa a vertical, un enlace por renglón */
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+    }
+
+    .navbar a,
+    .navbar .saludo {
+        text-align: center;
+        border-bottom: 1px solid var(--azul);
+    }
+
+    .navbar .saludo {
+        margin-left: 0;
+    }
+
+    .contenido {
+        padding: 16px;
+    }
+
+    /* Formularios: ocupan el 100% del ancho disponible */
+    .formulario {
+        max-width: 100%;
+    }
+
+    /* Botones a lo ancho: más fáciles de tocar con el dedo */
+    .boton {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Servicios: de 3 columnas pasa a 1 sola */
+    .servicios {
+        grid-template-columns: 1fr;
+    }
+
+    /* Quiénes somos: logo arriba y texto abajo */
+    .nosotros {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Subida: el selector de archivo y el botón uno debajo del otro */
+    .subida {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
