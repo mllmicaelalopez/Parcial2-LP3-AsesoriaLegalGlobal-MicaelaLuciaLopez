@@ -15,29 +15,20 @@ namespace AsesoriaLegalGlobal
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            // IsValid es true solo si TODOS los validadores de la página se cumplen (Guía 07).
-            // Se vuelve a controlar en el servidor por si el navegador no ejecutó la validación.
+            // IsValid (Guía 07)
             if (this.IsValid)
             {
-                // 1) Nombre de usuario en una variable de SESIÓN (se guarda en el servidor, Guía 09)
+                // Cookie vs Session (Guía 09)
                 this.Session["usuario"] = this.txtUsuario.Text;
-                // También guardamos el nombre para saludar al cliente en el login
                 this.Session["nombre"] = this.txtNombre.Text;
-                // Si había alguien logueado, al registrar un usuario nuevo esa sesión deja de valer
                 this.Session.Remove("logueado");
 
-                // 2) Contraseña en una COOKIE (se guarda en el navegador del cliente, Guía 09).
-                // OJO: guardar una contraseña en una cookie NO es seguro en un sistema real,
-                // porque queda en la computadora del usuario y se puede leer con F12.
-                // Lo correcto sería guardar un hash de la contraseña en una base de datos.
-                // Se hace así porque es lo que pide la consigna del parcial.
                 HttpCookie cookie1 = new HttpCookie("password", this.txtPassword.Text);
-                cookie1.Expires = DateTime.Now.AddDays(7); // cookie persistente: dura 7 días
+                cookie1.Expires = DateTime.Now.AddDays(7);
                 this.Response.Cookies.Add(cookie1);
 
-                // 3) Mensaje y redirección al login. Como Redirect cambia de página,
-                // el aviso de "registro exitoso" lo muestra Login.aspx al cargarse.
                 this.lblMensaje.Text = "Registro exitoso. Redirigiendo al inicio de sesión...";
+                // Response.Redirect (Guías 07 y 09)
                 this.Response.Redirect("Login.aspx");
             }
         }

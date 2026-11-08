@@ -4,5 +4,4 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%-- Esta página no muestra nada: en Page_Load cierra la sesión y redirige al inicio --%>
 </asp:Content>

@@ -1,29 +1,18 @@
-﻿/* =========================================================
-   Asesoría Legal Global - hoja de estilos única del sitio
-   Se enlaza solamente en MasterPage.master, así todas las
-   páginas que heredan de la Master la reciben.
-   ========================================================= */
-
-/* ---------- Paleta sacada de los logos de la empresa ----------
-   Las "variables CSS" (--nombre) guardan un color una sola vez
-   y después se usan con var(--nombre). Si cambia un color,
-   se cambia solo acá. */
-:root {
-    --azul: #2d2f7a;          /* fondo del logo 2 */
-    --azul-oscuro: #121a48;   /* fondo del logo 3 */
-    --azul-noche: #0d0f2a;    /* franja derecha del logo 3 */
-    --dorado: #f3c168;        /* balanza y estatua del logo 2 */
-    --dorado-apagado: #ccab6a;/* detalles dorados del logo 3 */
-    --gris: #9a9cab;          /* texto secundario de los logos */
-    --fondo: #f6f5f0;         /* fondo claro tipo papel */
+﻿:root {
+    --azul: #2d2f7a;
+    --azul-oscuro: #121a48;
+    --azul-noche: #0d0f2a;
+    --dorado: #f3c168;
+    --dorado-apagado: #ccab6a;
+    --gris: #9a9cab;
+    --fondo: #f6f5f0;
     --blanco: #ffffff;
     --rojo-error: #b3261e;
     --verde-exito: #1e7b34;
 }
 
-/* ---------- Reglas generales ---------- */
 * {
-    box-sizing: border-box; /* el padding no agranda las cajas */
+    box-sizing: border-box;
 }
 
 body {
@@ -34,7 +23,6 @@ body {
     line-height: 1.5;
 }
 
-/* Ninguna imagen puede ser más ancha que su contenedor (clave para celular) */
 img {
     max-width: 100%;
     height: auto;
@@ -44,7 +32,6 @@ h1, h2, h3 {
     color: var(--azul-oscuro);
 }
 
-/* ---------- Encabezado con el logo ---------- */
 .encabezado {
     background-color: var(--azul);
     color: var(--blanco);
@@ -72,10 +59,9 @@ h1, h2, h3 {
     font-size: 0.9em;
 }
 
-/* ---------- Barra de navegación ---------- */
 .navbar {
     background-color: var(--azul-oscuro);
-    display: flex;          /* los enlaces quedan uno al lado del otro */
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 0 24px;
@@ -94,21 +80,19 @@ h1, h2, h3 {
 }
 
 .navbar .saludo {
-    margin-left: auto;      /* empuja el saludo a la derecha */
+    margin-left: auto;
     color: var(--dorado);
     font-weight: bold;
     padding: 14px 16px;
 }
 
-/* ---------- Contenido principal ---------- */
 .contenido {
     max-width: 1000px;
     margin: 0 auto;
     padding: 24px;
-    min-height: 60vh;       /* el footer no queda pegado arriba en páginas cortas */
+    min-height: 60vh;
 }
 
-/* ---------- Pie de página ---------- */
 .pie {
     background-color: var(--azul-noche);
     color: var(--gris);
@@ -131,7 +115,6 @@ h1, h2, h3 {
     color: var(--dorado);
 }
 
-/* ---------- Tarjetas (cajas blancas con sombra) ---------- */
 .tarjeta {
     background-color: var(--blanco);
     border-radius: 10px;
@@ -141,7 +124,6 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-/* ---------- Botones (sirve para asp:Button y para HyperLink con CssClass="boton") ---------- */
 .boton {
     display: inline-block;
     background-color: var(--dorado);
@@ -168,7 +150,6 @@ h1, h2, h3 {
     background-color: var(--azul-oscuro);
 }
 
-/* ---------- Página de inicio ---------- */
 .portada {
     text-align: center;
     margin-bottom: 30px;
@@ -185,7 +166,6 @@ h1, h2, h3 {
     flex-wrap: wrap;
 }
 
-/* Las tres tarjetas de servicios en fila (grid de 3 columnas) */
 .servicios {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -202,17 +182,15 @@ h1, h2, h3 {
     width: 160px;
 }
 
-/* ---------- Formularios (Registro y Login) ---------- */
 .formulario {
     max-width: 520px;
-    margin: 0 auto;         /* centrado en escritorio */
+    margin: 0 auto;
 }
 
 .campo {
     margin-bottom: 16px;
 }
 
-/* Cada etiqueta ocupa su propia línea, arriba del cuadro de texto */
 .campo label {
     display: block;
     font-weight: bold;
@@ -229,7 +207,6 @@ h1, h2, h3 {
     font-size: 1em;
 }
 
-/* Borde dorado cuando el usuario está escribiendo en el campo */
 .campo input:focus {
     outline: none;
     border-color: var(--dorado);
@@ -241,8 +218,6 @@ h1, h2, h3 {
     font-size: 0.9em;
 }
 
-/* ---------- Mensajes ---------- */
-/* Mensajes de los validadores y errores: rojo */
 .error {
     display: block;
     color: var(--rojo-error);
@@ -250,7 +225,6 @@ h1, h2, h3 {
     margin-top: 4px;
 }
 
-/* Label de mensajes generales (se le cambia la clase desde el code-behind) */
 .mensaje {
     display: block;
     margin-top: 14px;
@@ -276,7 +250,6 @@ h1, h2, h3 {
     border-left: 4px solid var(--verde-exito);
 }
 
-/* ---------- Mis Documentos ---------- */
 .subida {
     display: flex;
     flex-wrap: wrap;
@@ -286,14 +259,13 @@ h1, h2, h3 {
 
 .subida input[type="file"] {
     flex: 1;
-    min-width: 0;           /* deja que el selector se achique en pantallas chicas */
+    min-width: 0;
     padding: 8px;
     border: 1px dashed var(--gris);
     border-radius: 6px;
     background-color: var(--fondo);
 }
 
-/* Lista de documentos: sin viñetas, una fila por archivo */
 .lista-documentos {
     list-style: none;
     padding: 0;
@@ -303,22 +275,15 @@ h1, h2, h3 {
 .lista-documentos li {
     padding: 10px 12px;
     border-bottom: 1px solid #e5e3da;
-    word-break: break-word; /* nombres largos no rompen el diseño en celular */
+    word-break: break-word;
 }
 
 .lista-documentos li:nth-child(odd) {
     background-color: var(--fondo);
 }
 
-/* =========================================================
-   DISEÑO RESPONSIVO
-   Todo lo que está dentro de @media se aplica SOLO cuando la
-   pantalla mide 768px de ancho o menos (tablets chicas y celulares).
-   Funciona junto con la etiqueta meta viewport de la Master.
-   ========================================================= */
+/* @media y diseño responsivo (CSS) */
 @media (max-width: 768px) {
-
-    /* Encabezado: logo arriba y texto abajo, centrados */
     .encabezado {
         flex-direction: column;
         text-align: center;
@@ -329,7 +294,6 @@ h1, h2, h3 {
         font-size: 1.3em;
     }
 
-    /* Navbar: de horizontal pasa a vertical, un enlace por renglón */
     .navbar {
         flex-direction: column;
         align-items: stretch;
@@ -350,29 +314,24 @@ h1, h2, h3 {
         padding: 16px;
     }
 
-    /* Formularios: ocupan el 100% del ancho disponible */
     .formulario {
         max-width: 100%;
     }
 
-    /* Botones a lo ancho: más fáciles de tocar con el dedo */
     .boton {
         width: 100%;
         text-align: center;
     }
 
-    /* Servicios: de 3 columnas pasa a 1 sola */
     .servicios {
         grid-template-columns: 1fr;
     }
 
-    /* Quiénes somos: logo arriba y texto abajo */
     .nosotros {
         flex-direction: column;
         text-align: center;
     }
 
-    /* Subida: el selector de archivo y el botón uno debajo del otro */
     .subida {
         flex-direction: column;
         align-items: stretch;

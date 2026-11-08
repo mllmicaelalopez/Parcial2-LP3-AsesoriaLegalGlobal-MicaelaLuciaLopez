@@ -11,12 +11,9 @@ namespace AsesoriaLegalGlobal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Abandon destruye TODAS las variables de sesión de este usuario
-            // (usuario, nombre y logueado). La cookie "password" queda en el navegador
-            // hasta que vence, pero sin la sesión ya no alcanza para entrar.
+            // Session.Abandon (Guía 09)
             this.Session.Abandon();
 
-            // Volvemos a la página de inicio
             this.Response.Redirect("Default.aspx");
         }
     }

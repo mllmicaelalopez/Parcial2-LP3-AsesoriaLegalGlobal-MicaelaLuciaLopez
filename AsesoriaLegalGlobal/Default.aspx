@@ -3,9 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
+<%-- ContentPlaceHolder y asp:Content (Guía 11) --%>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <!-- Portada: banner de la empresa (logo 3) y botones para empezar -->
     <section class="portada">
         <img src="img/logo3.png" alt="Banner de Asesoría Legal Global" class="banner" />
         <h1>Bienvenido a Asesoría Legal Global</h1>
@@ -20,7 +19,6 @@
         </div>
     </section>
 
-    <!-- Servicios: tres tarjetas que en celular quedan una debajo de la otra -->
     <h2>Nuestros servicios</h2>
     <section class="servicios">
         <div class="tarjeta">
@@ -37,7 +35,6 @@
         </div>
     </section>
 
-    <!-- Quiénes somos: usa el logo 1 de la empresa -->
     <section class="nosotros tarjeta">
         <img src="img/logo1.png" alt="Logo institucional" class="logo-nosotros" />
         <div>

@@ -11,8 +11,6 @@ namespace AsesoriaLegalGlobal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Página de presentación: no necesita código.
-            // El encabezado, la navbar y el footer los pone la Master Page.
         }
     }
 }

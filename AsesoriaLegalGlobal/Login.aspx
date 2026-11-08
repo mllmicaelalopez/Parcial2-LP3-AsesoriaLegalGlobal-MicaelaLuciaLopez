@@ -4,11 +4,9 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="tarjeta formulario">
         <h1>Iniciar sesión</h1>
 
-        <!-- Acá se muestra el aviso de "registro exitoso" o los errores del login -->
         <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje"></asp:Label>
 
         <div class="campo">
